@@ -7,3 +7,7 @@ steps:
   waitFor: ['-']
 images:
 - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_AR_REPO_NAME}/${_AR_IMAGE_NAME}'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-east1-docker.pkg.dev/myproject/myimage', '.']
+options:
+  logging: CLOUD_LOGGING_ONLY
